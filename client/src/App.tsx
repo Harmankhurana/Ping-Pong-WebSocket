@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
   const [socket, setSocket] = useState<WebSocket | undefined>(undefined);
+  // @ts-ignore
   const inputRef = useRef();
 
   function SendMessage() {
@@ -10,7 +11,9 @@ function App() {
       return;
     }
 
+    // @ts-ignore
     const message = inputRef.current.value;
+
     // @ts-ignore
     socket.send(message);
   }
